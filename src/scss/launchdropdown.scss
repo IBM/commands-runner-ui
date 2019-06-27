@@ -1,0 +1,63 @@
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2019. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+@import 'node_modules/carbon-components/scss/globals/scss/_colors';
+@import 'src/scss/variables.scss';
+
+.launch-dropdown {
+  &.inline-launch-dropdown {
+    position: relative;
+    .bx--list-box__menu {
+      top: 18px;
+    }
+  }
+  &.secondary-header-launch-dropdown {
+    position: fixed;
+    z-index: 6001;
+    right: 5%;
+    top: 7.59rem;
+    transition: transform 300ms $animation__standard;
+
+    &, * {
+      z-index: 6000;
+    }
+
+    &[data-header-active='true'] {
+      transition-delay: 150ms;
+      transform: translate3d(0, -50%, 0);
+      top: 5.082rem;
+    }
+
+    button {
+      width: 100px;
+      height: 32px;
+    }
+
+    .bx--list-box__menu {
+      top: 33px;
+      left: -101px;
+    }
+  }
+  svg {
+    margin-left: 7px;
+    transition: transform 200ms $animation__standard;
+
+    &.dropdown-open {
+      transform: rotate(180deg);
+    }
+  }
+  .bx--list-box__menu {
+    outline: 1px solid $color__blue-51;
+    width: 200px;
+
+    .bx--list-box__menu-item {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}

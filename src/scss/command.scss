@@ -1,0 +1,83 @@
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2017. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+@import 'node_modules/carbon-components/scss/globals/scss/_colors';
+
+.notification {
+  font-family: Sans-serif;
+  position: fixed;
+  bottom: 20px;
+  right: 90px;
+  .command {
+    box-shadow: 0 0 5px 3px rgba($color__blue-90, 0.1);
+    &.transition-enter {
+      position: fixed;
+      bottom: 20px;
+      &.transition-enter-active {
+        transform: translateX(-100%);
+        transition: transform 500ms ease-in-out;
+      }
+    }
+    &.transition-exit.transition-exit-active {
+      transform: translateX(100%);
+      transition: transform 500ms ease-in-out;
+    }
+  }
+  .title {
+    min-width: 25rem;
+    white-space: pre;
+    line-height: 34px;
+    padding: 0 1rem;
+    border-top: 6px solid $color__blue-40;
+    font-weight: 700;
+    font-size: .75rem;
+    background-color: $color__white;
+    .bx--modal-close {
+      top: .875rem;
+      svg {
+        fill: $color__blue-20;
+      }
+    }
+    .subTitle {
+      font-weight: 300;
+    }
+  }
+  .command-container {
+    display: flex;
+    background-color: $color__navy-gray-3;
+    padding: 1rem;
+    p {
+      font-size: .875rem;
+      white-space: pre;
+      line-height: 2.125rem;
+    }
+  }
+  .copy-button {
+    cursor: pointer;
+    margin-top: 2.125rem;
+    position: relative;
+    svg {
+      fill: $color__blue-30;
+    }
+  }
+  .command-type {
+    color: $color__yellow-30;
+  }
+  .command-details {
+    color: $color__white;
+  }
+  .resourceButton {
+    position: absolute;
+    bottom: 0;
+    right: -60px;
+    cursor: pointer;
+    .shadow {
+      filter: drop-shadow(0 1px 10px rgba(#000, 0.15));
+    }
+  }
+}
