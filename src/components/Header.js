@@ -15,7 +15,6 @@
 # limitations under the License.
 ################################################################################
 */
-
 import React from 'react'
 import { translate } from "react-i18next";
 import { connect } from 'react-redux'
@@ -38,16 +37,6 @@ import {
 
 require('../scss/header.scss')
 
-const tryRequire = (path) => {
-  try {
-   return require(`${path}`);
-  } catch (err) {
-   return null;
-  }
-};
-
-const logo = tryRequire('../graphics/MyCompany_Logo.svg')
-
 class Header extends React.Component {
 
   componentWillMount() {
@@ -63,6 +52,7 @@ class Header extends React.Component {
   render() {
     const { leftNavOpen, t } = this.props
     const homepage = ''
+    const logo_svg = require('../graphics/MyCompany_Logo.svg')
     return (
       <div className='app-header-wrapper'>
         <header className='app-header' aria-label={t('header.label')}>
@@ -77,7 +67,7 @@ class Header extends React.Component {
             </div>
 
             <div className='logo-container'>
-              <a href={homepage}><img className='logo' src={logo} alt={t('logo.alt')} /></a>
+              <a href={homepage}><img className='logo' src={logo_svg} alt={t('logo.alt')} /></a>
             </div>
             <div className='navigation-container'>
               <nav aria-label={t('nav.label')}>
