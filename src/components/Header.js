@@ -38,6 +38,16 @@ import {
 
 require('../scss/header.scss')
 
+const tryRequire = (path) => {
+  try {
+   return require(`${path}`);
+  } catch (err) {
+   return null;
+  }
+};
+
+const logo = tryRequire('../graphics/MyCompany_Logo.svg')
+
 class Header extends React.Component {
 
   componentWillMount() {
@@ -67,7 +77,7 @@ class Header extends React.Component {
             </div>
 
             <div className='logo-container'>
-              <a href={homepage}><img className='logo' src={'../graphics/MyCompany_Logo.svg'} alt={t('logo.alt')} /></a>
+              <a href={homepage}><img className='logo' src={logo} alt={t('logo.alt')} /></a>
             </div>
             <div className='navigation-container'>
               <nav aria-label={t('nav.label')}>
