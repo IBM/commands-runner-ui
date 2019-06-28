@@ -14,6 +14,7 @@ you can add 2 parameters key and cert to run https
 
 ## Access
 
+
 1. Open your browser on `http://localhost:30100` or ``https://localhost:30102`
 2.  Press on the `settings` menu located on top right screen and enter:
 3.  as `Commands runner API end-point` `http://<IP>:<port>` where the IP is the IP address and port on which the commands-runner run. If you use `https` as by default the certificate is self-signed you have to open another tab in your browser and browse to `https://<IP>:<ssl_port>` and accept the certificate. By default the http port is 3101 and https 30103.
