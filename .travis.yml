@@ -18,7 +18,6 @@ cache:
 
 before_install:
 - make copyright-check
-- make docker-login
 
 script:
 - make
