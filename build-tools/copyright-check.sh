@@ -34,7 +34,7 @@ for f in `find .  \( -path ./vendor -prune \) -o \( -path ./node_modules -prune 
 
   FILETYPE=$(basename ${f##*.})
   case "${FILETYPE}" in
-  	js | sh | go | java | rb)
+  	js | sh | go | java | rb| scss | css)
   		COMMENT_PREFIX=""
   		;;
   	*)
