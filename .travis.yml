@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "8.9.4"
+
+sudo: required
+
+notifications:
+  email:
+    recipients:
+    - dominique.vernier@us.ibm.com
+    on_success: change
+    on_failure: always
+
+cache:
+#  timeout: 3600
+  directories:
+  - _build
+
+before_install:
+- make copyright-check
+
+script:
+- make

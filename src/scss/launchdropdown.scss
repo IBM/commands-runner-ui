@@ -1,0 +1,73 @@
+/*
+################################################################################
+# Copyright 2019 IBM Corp. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+################################################################################
+*/
+
+@import 'node_modules/carbon-components/scss/globals/scss/_colors';
+@import 'src/scss/variables.scss';
+
+.launch-dropdown {
+  &.inline-launch-dropdown {
+    position: relative;
+    .bx--list-box__menu {
+      top: 18px;
+    }
+  }
+  &.secondary-header-launch-dropdown {
+    position: fixed;
+    z-index: 6001;
+    right: 5%;
+    top: 7.59rem;
+    transition: transform 300ms $animation__standard;
+
+    &, * {
+      z-index: 6000;
+    }
+
+    &[data-header-active='true'] {
+      transition-delay: 150ms;
+      transform: translate3d(0, -50%, 0);
+      top: 5.082rem;
+    }
+
+    button {
+      width: 100px;
+      height: 32px;
+    }
+
+    .bx--list-box__menu {
+      top: 33px;
+      left: -101px;
+    }
+  }
+  svg {
+    margin-left: 7px;
+    transition: transform 200ms $animation__standard;
+
+    &.dropdown-open {
+      transform: rotate(180deg);
+    }
+  }
+  .bx--list-box__menu {
+    outline: 1px solid $color__blue-51;
+    width: 200px;
+
+    .bx--list-box__menu-item {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
